@@ -114,3 +114,18 @@
         }
     }
 }
+
+.todo_card_no_card{
+   
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ._card_no_card_text{
+        font-size: 35px;
+        font-weight: 600;
+        color: #dbd6d6;
+        letter-spacing: 2px;
+    }
+}

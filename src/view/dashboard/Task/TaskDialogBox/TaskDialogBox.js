@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useDispatch , useSelector } from 'react-redux';
+import Autocomplete from '@mui/material/Autocomplete';
 import { AddTodoAction } from '../../../../action/TodoAction';
 
 
@@ -16,25 +17,30 @@ export default function FormDialog() {
   
   const dispatch = useDispatch();
 
-  
-
   const handleClickOpen = () => {
     setOpen(true);
   };
-  const handleSubmit = (e) => {
-    console.log('hit');
-    e.preventDefault();
-    dispatch(AddTodoAction({tittle: todoTittle , descpription: todoDescp , status: todoStatus}))
-  };
-
 
   const handleClose = () => {
     setOpen(false);
   };
 
+  const handleSubmit = (e) => {
+    console.log('hit');
+    e.preventDefault();
+    dispatch(AddTodoAction({tittle: todoTittle , descpription: todoDescp , status: todoStatus}))
+    setTodoStatus(''); setTodoDescp(''); setTodoTittle('');
+  };
+
   const [todoTittle ,setTodoTittle] = useState();
   const [todoDescp ,setTodoDescp] = useState();
   const [todoStatus ,setTodoStatus] = useState();
+
+  const WorkStatus = [
+    {label: 'Completed'},
+    {label: 'Pending'},
+    {label: 'Working'},
+   ]
 
   return (
       <div>
@@ -52,6 +58,7 @@ export default function FormDialog() {
             autoFocus
             margin="dense"
             id="tittle"
+            required
             label="Tittle"
             type="text"
             fullWidth
@@ -74,13 +81,22 @@ export default function FormDialog() {
             id="status"
             label="Status"
             type="text"
+            options={WorkStatus}
             fullWidth
             variant="standard"
             onChange={(e) => setTodoStatus(e.target.value)}
 
           />
-          <Button  onClick={handleClose}>Cancel</Button>
-          <Button type="submit" onClick={handleClose}>Add</Button>
+           {/* <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            
+            sx={{ width:  }}
+            renderInput={(params) => <TextField {...params} label="Movie" />}
+           /> */}
+          <Button   onClick={handleClose}>Cancel</Button>
+          { (todoTittle && todoStatus) ?  <Button type="submit" onClick={handleClose}>Add</Button> :  <Button type="submit" disabled onClick={handleClose}>Add</Button>}
+         
           </form>
         </DialogContent>
         
