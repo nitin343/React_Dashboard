@@ -1,0 +1,46 @@
+
+.main-header{
+    height: 53px;
+    width: 98vw;
+    // background-color: black;
+    // color: white;
+    border-bottom: 1px solid #edd7d7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+
+    .header-name{
+        margin: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #042c4e;
+    }
+
+    .icon-userName{
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .icon-notification{
+            font-size: small;
+            margin: 0 40px;
+        }
+        .icon-userName{
+            font-size: 15px;
+        }
+    }
+}
+
+
+@media only screen and (min-width:270px) and  (max-width: 600px){
+
+    .main-header{
+        height: 60px;
+            .icon-notification{
+               display: none;
+            }       
+    }
+}

@@ -1,0 +1,107 @@
+.main_view_container{
+    // border: 1px solid;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: grid;
+    grid-template-rows: 0.2fr 1fr 0.3fr;
+    border: 2px solid #48454514 !important;
+
+
+ .main_view_header1{
+    border-bottom: 2px solid #48454514 !important;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .main_view_goal{
+       font-size: 13px;
+       font-weight: 500;
+    }
+ }
+
+ }
+
+
+ .main_totalView_progress{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid;
+    width: 100%;
+
+    .main_totalView_labeled_progress{
+
+    //   border: 1px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+        .totalView_CircularProgressWithLabel{
+            height: 80px !important;
+            width: 80px !important;
+        }
+
+    }
+    .main_totalView_text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 ;
+        // border: 1px solid yellow;
+
+
+        .main_totalView_view_made_today{
+         font-family: 'Poppins', sans-serif;
+         font-size: 10px;
+         color: #857878;
+            
+        }
+
+        .main_totalView_2400{
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #4527a0;
+        }
+    }
+
+
+    
+}
+
+
+.main_totalView_footer{
+    width: 100%;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     border-top: 2px solid #48454514 !important;
+    //  border: 1px solid;
+
+    .main_totalView_footer_goalStatus{
+           border-right:2px solid #48454514 !important; ;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+    }
+
+    .main_totalView_footer_text{
+        font-family: 'Poppins', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: #8b8a8f;
+    }
+
+    .main_totalView_footer_Status{
+        font-family: 'Poppins', sans-serif;
+        font-size: 10px;
+        color: #857878;
+    }
+}
+
+@media only screen and (min-width:270px) and  (max-width: 600px){
+    .main_totalView_progress{
+        margin: 10px 0;
+    }   
+}

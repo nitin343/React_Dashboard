@@ -1,0 +1,93 @@
+.main_overview_container{
+   border: none;
+   
+
+   .main_container_header{
+    margin: 10px 10px;
+    display: flex;
+    align-content: flex-end;
+    justify-content: space-between;
+   }
+   .text_overview{
+      font-size: 24px;
+      color: #838383;
+   }
+
+   .main_container_card{
+      background-color: #164472;
+      width: 100%;
+      display: grid;
+      grid-template-columns:  1fr 0.5fr;
+
+      // .trophy_image{
+      //    height: 193px;
+      //    width: 193px;
+      // }
+
+      .topic_card{
+         display: flex;
+         flex-direction: column;     
+         justify-content: center;
+      }
+
+      .point_card{
+         background-color: #061f38;
+         height: 140px;
+         width: 14opx;
+         border-radius: 10px;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         
+         .point_number{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .number{
+               color: rgb(240, 240, 12);
+               font-size: 50px;
+               font-family: 'Oswald', sans-serif;
+            }
+
+            .points{
+               color: #97971b;
+               font-size: 19px;
+               font-family: 'roboto';
+               line-height: 0px;
+            }
+         }
+
+         .explore{
+            color: rgb(93, 202, 202);
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 0.26rem;
+         }
+         
+      }
+   }
+}
+
+Typography{
+   font-family: 'Open Sans', sans-serif !important;
+}
+
+@media only screen and (min-width:270px) and  (max-width: 600px) {
+   .topic_card {
+      .topic_card_typo{
+      font-size: 20px !important;
+      }
+      .topic_card_typo_descp{
+         font-size: 12px !important;
+      }
+   }
+
+   .point_card{
+      height: 140px;
+      width: 110px;
+   }
+
+}
