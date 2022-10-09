@@ -36,6 +36,7 @@ function Task(props) {
     const dispatch = useDispatch();
     const removeTodo = (todo) => {
         dispatch(RemoveTodoAction(todo))
+        handleClose();
     }
 
   
