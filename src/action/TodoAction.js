@@ -8,7 +8,7 @@ export const AddTodoAction = (todo) => (dispatch,getState) => {
   if(!hasTodo && todo !== ''){
     dispatch({
         type: "ADD_TODO",
-        payload:[{id:todo.todo} , ...todos],
+        payload:[{id:todo,todo} , ...todos],
     })
   }
 }
