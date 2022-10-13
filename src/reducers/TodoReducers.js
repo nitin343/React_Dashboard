@@ -4,7 +4,7 @@ export const TodoReducer = (state = {todos: []} , action) => {
     case "ADD_TODO":
         return{ todos: action.payload};
     case "REMOVE_TODO":
-        return{ todos:action.payload }
+        return{ todos:action.payload };
     default:
         return state;
  }

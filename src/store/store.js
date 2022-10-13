@@ -2,9 +2,11 @@ import {createStore , combineReducers , applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import  {composeWithDevTools} from 'redux-devtools-extension'
 import { TodoReducer } from '../reducers/TodoReducers';
+import { GoalReducer } from '../reducers/AddGoalReducers';
 
 const reducer = combineReducers({
    Todo: TodoReducer,
+   Goal: GoalReducer,
 })
 
 

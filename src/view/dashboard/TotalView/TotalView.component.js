@@ -1,10 +1,11 @@
 import React from 'react';
 import './TotalView.scss';
-import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
 import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import AddGoalStatus from './AddGoalStatus';
+import { useSelector } from 'react-redux';
 
 
 function CircularProgressWithLabel(props) {
@@ -34,13 +35,17 @@ function CircularProgressWithLabel(props) {
   CircularProgressWithLabel.propTypes = {
     value: PropTypes.number.isRequired,
   };
-  
 
 
 
 function TotalView(props) {
     
         const [progress, setProgress] = React.useState(0);
+        const totalView = 20;
+        const Goal = useSelector((state) => state.Goal);
+        const { goal } = Goal;
+        const {percentage} = Goal;
+
       
         React.useEffect(() => {
           const timer = setInterval(() => {
@@ -54,27 +59,28 @@ function TotalView(props) {
           };
         }, []);
 
-
     return (
-        <div className='main_view_container'>
+      <div className='main_view_container'>
             <div className='main_view_header1'>
                 <div className='main_view_goal'>View Goals</div>
-                <Button variant="contained" size="small">Add New</Button>
+          
+                <AddGoalStatus />
             </div>
+            
             <div className='main_totalView_progress'>
                <div>
                 <div className='main_totalView_labeled_progress'>
-                <CircularProgressWithLabel className="totalView_CircularProgressWithLabel" variant="determinate" value={65}/>
+                <CircularProgressWithLabel className="totalView_CircularProgressWithLabel" variant="determinate" value={percentage}/>
                 </div>
                 <div className='main_totalView_text'>
                     <span className='main_totalView_view_made_today'>Total views made today</span>
-                    <span className='main_totalView_2400'>2400</span>
+                    <span className='main_totalView_2400'>{totalView}</span>
                 </div>
                </div>
             </div>
             <div className='main_totalView_footer'>
                 <span className='main_totalView_footer_goalStatus'>
-                    <span className='main_totalView_footer_text'>4800 views</span>
+                    <span className='main_totalView_footer_text'>{goal ? goal : 480 } views</span>
                     <span className='main_totalView_footer_Status'>Goal status</span>
                 </span>
                 <span className='main_totalView_footer_goalStatus'>

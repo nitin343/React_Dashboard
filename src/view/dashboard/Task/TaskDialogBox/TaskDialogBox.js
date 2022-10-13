@@ -2,12 +2,10 @@ import  React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useDispatch , useSelector } from 'react-redux';
-import Autocomplete from '@mui/material/Autocomplete';
+import { useDispatch  } from 'react-redux';
 import { AddTodoAction } from '../../../../action/TodoAction';
 
 
@@ -87,13 +85,6 @@ export default function FormDialog() {
             onChange={(e) => setTodoStatus(e.target.value)}
 
           />
-           {/* <Autocomplete
-            disablePortal
-            id="combo-box-demo"
-            
-            sx={{ width:  }}
-            renderInput={(params) => <TextField {...params} label="Movie" />}
-           /> */}
           <Button   onClick={handleClose}>Cancel</Button>
           { (todoTittle && todoStatus) ?  <Button type="submit" onClick={handleClose}>Add</Button> :  <Button type="submit" disabled onClick={handleClose}>Add</Button>}
          

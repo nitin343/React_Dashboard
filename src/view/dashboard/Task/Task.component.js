@@ -1,7 +1,6 @@
 import React from 'react';
 import './Task.scss';
 
-import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import FormDialog from './TaskDialogBox/TaskDialogBox';
 
 import { useDispatch , useSelector } from 'react-redux';
@@ -13,7 +12,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import {Button , Chip ,Avatar} from '@mui/material';
+import {Button ,Avatar} from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -97,7 +96,6 @@ function Task(props) {
         <div className='main_task_container'>
            <div className='main_task_container_header'>
             <span className='main_task_header_text'>Task List</span>
-            {/* <Button variant="contained" onClick={handleClickOpen} size="small">Add New</Button> */}
             <FormDialog />
            </div>  
            <div className='main_task_card_parent'>       
